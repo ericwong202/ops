@@ -1,4 +1,4 @@
-wlan create 1 01-MALEN-1X 01-MALEN-1X
+wlan disable 1
 wlan radius auth add 1 1
 wlan radius auth add 1 2
 wlan radius acct add 1 1
@@ -7,7 +7,7 @@ wlan aaa-over enable 1
 wlan flexconnect local-sw 1 disable
 wlan interface 1 deadnet
 wlan profiling local all enable 2
-wlan create 3 01-MALEN-GUEST 01-MALEN-GUEST
+wlan disable 3
 wlan radius auth add 3 1
 wlan radius auth add 3 2
 wlan radius acct add 3 1
