@@ -68,3 +68,31 @@ wlan mac-fil enable 4
 wlan nac radius enable 4
 wlan mobility anch add 4 10.1.1.33 
 wlan security owe-tm enable 4 3
+
+
+ap profile default-ap-profile
+dot1x username ap password 0 CC!ewir4
+dot1x eap-type eap-fast
+dot1x lsc dot1x-port-auth
+ap profile default-ap-profile-fabric
+dot1x username ap password 0 CC!ewir4
+dot1x eap-type eap-fast
+dot1x lsc dot1x-port-auth
+
+wireless aaa policy default-aaa-policy
+nas-id option2 al-location
+
+wireless profile flex default-flex-profile
+no acl-policy 
+acl-policy
+central-webauth
+
+#INTERACTIVE
+ap dot11 24ghz shutdown <IQ>continue<R>y
+ap dot11 5ghz shutdown <IQ>continue<R>y
+ap country US,SG <IQ>continue<R>y
+#ENDS_INTERACTIVE
+no ap dot11 24ghz shutdown
+wr
+
+
