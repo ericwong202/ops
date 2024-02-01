@@ -60,6 +60,8 @@ qos qosmap dscp-to-up-ex 24 3
 avc profile avcprof51 rule add application cisco-jabber-audio mark 46
 avc profile avcprof51 rule add application cisco-jabber-video mark 34
 avc profile avcprof51 rule add application cisco-jabber-control mark 24
+qos qosman enable
+config 802.11b enable network
 wlan qos 1 platinum
 wlan avc 1 profile avcprof51 enable
 
