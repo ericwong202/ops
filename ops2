@@ -1,0 +1,11 @@
+config wlan create 1 01-MALEN-1X
+config wlan aaa-over enable 1
+config wlan interface 1 dmz
+config wlan mobility anch add 1 10.1.1.33
+config disable 3
+config wlan security wpa disable 3
+config wlan interface 3 dmz
+config wlan aaa-over enable 3
+config wlan nac radius enable 3
+config wlan mac-fil enable 3
+config wlan mobility anch add 3 10.1.1.33
