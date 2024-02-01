@@ -1,5 +1,44 @@
+ao mode flexconnect submode none UKRB01-AP1
+ao mode flexconnect submode none UKRB01-AP2
+ao mode flexconnect submode none UKRB01-AP3
+flexconnect group flexgroup add
+flexconnect group flexgroup vlan enable
+flexconnect group flexgroup vlan native 31
+flexconnect group flexgroup wlan-vlan wlan 1 add vlan 101
+flexconnect group flexgroup ap add
+flexconnect group flexgroup ap add
+flexconnect group flexgroup ap add
 wlan disable 2
 wlan radius auth add 2 1
 wlan radius auth add 2 2
 wlan radius acct add 2 1
 wlan radius acct add 2 2
+wlan aaa-over enable 2
+wlan flexconnect local-sw 2 enable
+wlan mac-fil enable 2
+wlan profiling local all enable 2
+wlan flexconnect group flexgroup wlan-vlan wlan 2 add vlan 102
+wlan disable 1
+wlan radius auth add 1 1
+wlan radius auth add 1 2
+wlan radius acct add 1 1
+wlan radius acct add 1 2
+wlan aaa-over enable 1
+wlan flexconnect vlan-central-sw 1 enable
+wlan mobility anch add 1 10.1.1.33
+wlan profiling local all enable 2
+wlan disable 3
+wlan radius auth add 3 1
+wlan radius auth add 3 2
+wlan radius acct add 3 1
+wlan radius acct add 3 2
+wlan security wpa disable 3
+wlan flexconnect local-sw 3 disable
+wlan aaa-over enable 3
+wlan mac-fil enable 3
+wlan nac radius enable 3
+wlan mobility anch add 3 10.1.1.33
+wlan security ft adap enable 2
+wlan security ft over enable 2
+qos fastlane enable 2
+y
