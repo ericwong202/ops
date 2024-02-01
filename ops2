@@ -9,3 +9,15 @@ config wlan aaa-over enable 3
 config wlan nac radius enable 3
 config wlan mac-fil enable 3
 config wlan mobility anch add 3 10.1.1.33
+wlan create 4 01-MALEN-GUEST-PILOT 01-MALEN-GUEST-PILOT
+wlan security wpa wpa2 disable 4
+wlan security wpa wpa3 enable 4
+wlan security wpa akm 802.1x disable 4
+wlan security wpa akm owe enable 4
+wlan security pmf req 4
+wlan security ft disable 4
+wlan aaa-over enable 4
+wlan mac-fil enable 4
+wlan nac radius enable 4
+wlan mobility anch add 4 10.1.1.33 
+wlan security owe-tm enable 4 3
