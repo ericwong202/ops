@@ -42,3 +42,29 @@ wlan security ft adap enable 2
 wlan security ft over enable 2
 qos fastlane enable 2
 y
+
+
+
+config wlan create 1 01-MALEN-1X
+config wlan aaa-over enable 1
+config wlan interface 1 dmz
+config wlan mobility anch add 1 10.1.1.33
+config disable 3
+config wlan security wpa disable 3
+config wlan interface 3 dmz
+config wlan aaa-over enable 3
+config wlan nac radius enable 3
+config wlan mac-fil enable 3
+config wlan mobility anch add 3 10.1.1.33
+wlan create 4 01-MALEN-GUEST-PILOT 01-MALEN-GUEST-PILOT
+wlan security wpa wpa2 disable 4
+wlan security wpa wpa3 enable 4
+wlan security wpa akm 802.1x disable 4
+wlan security wpa akm owe enable 4
+wlan security pmf req 4
+wlan security ft disable 4
+wlan aaa-over enable 4
+wlan mac-fil enable 4
+wlan nac radius enable 4
+wlan mobility anch add 4 10.1.1.33 
+wlan security owe-tm enable 4 3
