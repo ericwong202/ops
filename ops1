@@ -54,6 +54,7 @@ config ap group-name apgroup24 UKWH1-AP4
 y
 
 config 802.11b disable network
+y
 config qos qosmap disable
 config qos qosmap trust-dscp-up enable
 config qos qosmap dscp-to-up-ex 46 6
@@ -72,9 +73,9 @@ config wlan security ft over enable 1
 config wlan security wpa akm 802.1x enable 1
 config wlan security ft reassociation-timeout 15 1
 config wlan assisted-ro neighbor-list enable 1
-config wlan assisted-ro predication enable 1
+config wlan assisted-ro prediction enable 1
 y
-config assisted-ro predication-min 2
+config assisted-ro prediction-min 2
 
 config network multicast mode multicast 239.2.3.9
 config network multicast global enable
