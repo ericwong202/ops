@@ -87,7 +87,7 @@ dot1x eap-type eap-fast
 dot1x lsc dot1x-port-auth
 
 wireless aaa policy default-aaa-policy
-nas-id option2 al-location
+nas-id option2 ap-location
 
 wireless profile flex default-flex-profile
 no acl-policy 
