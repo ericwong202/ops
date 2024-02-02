@@ -1,81 +1,84 @@
-wlan disable 1
-wlan radius auth add 1 1
-wlan radius auth add 1 2
-wlan radius acct add 1 1
-wlan radius acct add 1 2
-wlan aaa-over enable 1
-wlan flexconnect local-sw 1 disable
-wlan interface 1 deadnet
-wlan profiling local all enable 2
-wlan disable 3
-wlan radius auth add 3 1
-wlan radius auth add 3 2
-wlan radius acct add 3 1
-wlan radius acct add 3 2
-wlan security wpa disable 3
-wlan interface 3 deadnet
-wlan aaa-over enable 3
-wlan mac-fil enable 3
-wlan nac radius enable 3
-wlan mobility anch add 3 10.1.1.33 pri 1
-wlan create 4 01-MALEN-GUEST-PILOT 01-MALEN-GUEST-PILOT
-wlan security wpa wpa2 disable 4
-wlan security wpa wpa3 enable 4
-wlan security wpa akm 802.1x disable 4
-wlan security wpa akm owe enable 4
-wlan security pmf req 4
-wlan security ft disable 4
-wlan aaa-over enable 4
-wlan mac-fil enable 4
-wlan nac radius enable 4
-wlan mobility anch add 4 10.1.1.33 pri 1
-wlan security owe-tm enable 4 3
-rf-profile create 802.11b rfprof24
-rf-profile data-rate 802.11b disable 18 rfprof24
-rf-profile data-rate 802.11b mandatory 24 rfprof24
-rf-profile data-rate 802.11b disable 1 rfprof24
-rf-profile data-rate 802.11b disable 2 rfprof24
-rf-profile data-rate 802.11b disable 5.5 rfprof24
-rf-profile data-rate 802.11b disable 6 rfprof24
-rf-profile data-rate 802.11b disable 9 rfprof24
-rf-profile data-rate 802.11b disable 11 rfprof24
-rf-profile data-rate 802.11b disable 12 rfprof24
-rf-profile rx-sop thresh -75 rfprof24
-rf-profile cover data -70 rfprof24
-wlan apgroup add apgroup24
-wlan apgroup profile-map add apgroup24 rfprof24
+config wlan disable 1
+config wlan radius auth add 1 1
+config wlan radius auth add 1 2
+config wlan radius acct add 1 1
+config wlan radius acct add 1 2
+config wlan aaa-over enable 1
+config wlan flexconnect local-sw 1 disable
+config wlan interface 1 deadnet
+config wlan profiling local all enable 1
+
+config wlan disable 3
+config wlan radius auth add 3 1
+config wlan radius auth add 3 2
+config wlan radius acct add 3 1
+config wlan radius acct add 3 2
+config wlan security wpa disable 3
+config wlan interface 3 deadnet
+config wlan aaa-over enable 3
+config wlan mac-fil enable 3
+config wlan nac radius enable 3
+config wlan mobility anch add 3 10.1.1.33 pri 1
+config wlan create 4 01-MALEN-GUEST-PILOT 01-MALEN-GUEST-PILOT
+config wlan security wpa wpa2 disable 4
+config wlan security wpa wpa3 enable 4
+config wlan security wpa akm 802.1x disable 4
+config wlan security wpa akm owe enable 4
+config wlan security pmf req 4
+config wlan security ft disable 4
+config wlan aaa-over enable 4
+config wlan mac-fil enable 4
+config wlan nac radius enable 4
+config wlan mobility anch add 4 10.1.1.33 pri 1
+config wlan security owe-tm enable 4 3
+
+config rf-profile create 802.11b rfprof24
+config rf-profile data-rate 802.11b disable 18 rfprof24
+config rf-profile data-rate 802.11b mandatory 24 rfprof24
+config rf-profile data-rate 802.11b disable 1 rfprof24
+config rf-profile data-rate 802.11b disable 2 rfprof24
+config rf-profile data-rate 802.11b disable 5.5 rfprof24
+config rf-profile data-rate 802.11b disable 6 rfprof24
+config rf-profile data-rate 802.11b disable 9 rfprof24
+config rf-profile data-rate 802.11b disable 11 rfprof24
+config rf-profile data-rate 802.11b disable 12 rfprof24
+config rf-profile rx-sop thresh -75 rfprof24
+config rf-profile cover data -70 rfprof24
+config wlan apgroup add apgroup24
+config wlan apgroup profile-map add apgroup24 rfprof24
 y
-wlan apgroup interface-map add apgroup24 1 deadnet
-wlan apgroup interface-map add apgroup24 3 deadnet
+config wlan apgroup interface-map add apgroup24 1 deadnet
+config wlan apgroup interface-map add apgroup24 3 deadnet
 y
-ap group-name apgroup24 UKWH1-AP4
+config ap group-name apgroup24 UKWH1-AP4
 y
 
-802.11b disable network
-qos qosmap disable
-qos qosmap trust-dscp-up enable
-qos qosmap dscp-to-up-ex 46 6
-qos qosmap dscp-to-up-ex 34 5
-qos qosmap dscp-to-up-ex 24 3
-avc profile avcprof51 rule add application cisco-jabber-audio mark 46
-avc profile avcprof51 rule add application cisco-jabber-video mark 34
-avc profile avcprof51 rule add application cisco-jabber-control mark 24
-qos qosman enable
+config 802.11b disable network
+config qos qosmap disable
+config qos qosmap trust-dscp-up enable
+config qos qosmap dscp-to-up-ex 46 6
+config qos qosmap dscp-to-up-ex 34 5
+config qos qosmap dscp-to-up-ex 24 3
+config avc profile avcprof51 rule add application cisco-jabber-audio mark 46
+config avc profile avcprof51 rule add application cisco-jabber-video mark 34
+config avc profile avcprof51 rule add application cisco-jabber-control mark 24
+config qos qosman enable
 config 802.11b enable network
-wlan qos 1 platinum
-wlan avc 1 profile avcprof51 enable
+config wlan qos 1 platinum
+config wlan avc 1 profile avcprof51 enable
 
-wlan security ft adap enable 1
-wlan security ft over enable 1
-wlan security wpa akm 802.1x enable 1
-wlan security ft reassociation-timeout 15 1
-wlan assisted-ro neighbor-list enable 1
-wlan assisted-ro predication enable 1
+config wlan security ft adap enable 1
+config wlan security ft over enable 1
+config wlan security wpa akm 802.1x enable 1
+config wlan security ft reassociation-timeout 15 1
+config wlan assisted-ro neighbor-list enable 1
+config wlan assisted-ro predication enable 1
 y
-assisted-ro predication-min 2
-network multicast mode multicast 239.2.3.9
-network multicast global enable
-network multicast igmp snoop enable
-network multicast igmp timeout 180
+config assisted-ro predication-min 2
+
+config network multicast mode multicast 239.2.3.9
+config network multicast global enable
+config network multicast igmp snoop enable
+config network multicast igmp timeout 180
 
 
