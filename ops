@@ -5,7 +5,7 @@ config flexconnect group flexgroup add
 config flexconnect group flexgroup vlan enable
 config flexconnect group flexgroup vlan native 31
 config flexconnect group flexgroup wlan-vlan wlan 1 add vlan 101
-config flexconnect group flexgroup ap add
+config flexconnect group flexgroup ap add xxxx.xxxx.xxxx
 config flexconnect group flexgroup ap add
 config flexconnect group flexgroup ap add
 
@@ -18,7 +18,7 @@ config wlan aaa-over enable 2
 config wlan flexconnect local-sw 2 enable
 config wlan mac-fil enable 2
 config wlan profiling local all enable 2
-config wlan flexconnect group flexgroup wlan-vlan wlan 2 add vlan 102
+config flexconnect group flexgroup wlan-vlan wlan 2 add vlan 102
 
 config wlan disable 1
 config wlan radius auth add 1 1
@@ -36,26 +36,27 @@ config wlan radius auth add 3 2
 config wlan radius acct add 3 1
 config wlan radius acct add 3 2
 config wlan security wpa disable 3
-wlan flexconnect local-sw 3 disable
-wlan aaa-over enable 3
-wlan mac-fil enable 3
-wlan nac radius enable 3
-wlan mobility anch add 3 10.1.1.33
+config wlan flexconnect local-sw 3 disable
+config wlan aaa-over enable 3
+config wlan mac-fil enable 3
+config wlan nac radius enable 3
+config wlan mobility anch add 3 10.1.1.33
 
-wlan security ft adap enable 2
-wlan security ft over enable 2
-qos fastlane enable 2
+config wlan security ft adap enable 2
+config wlan security ft over enable 2
+config qos fastlane enable 2
 y
 
 
 
 config wlan create 1 03-MALEN-1X 03-MALEN-1X
+config wlan disable 1
 config wlan aaa-over enable 1
 config wlan interface 1 dmz
 config wlan mobility anch add 1 10.1.1.33
 config wlan disable 1
 
-config disable 3
+config wlan disable 3
 config wlan security wpa disable 3
 config wlan interface 3 dmz
 config wlan aaa-over enable 3
